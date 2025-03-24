@@ -44,7 +44,7 @@ Este é um editor de imagens web desenvolvido com Python, Flask, HTML, CSS e Jav
    ```bash
    python app.py
    ```
-4. Acesse no navegador:
+4. Acede no navegador:
    ```
    http://127.0.0.1:5000/
    ```
