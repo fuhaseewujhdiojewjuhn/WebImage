@@ -1,0 +1,140 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set the height to full viewport height */
+    background: linear-gradient(to bottom, rgba(243, 145, 191, 0.856) 0%, rgba(0, 0, 0, 0) 50%), url("https://i.redd.it/sumeru-is-pure-wallpaper-material-v0-7jz57u6l71l91.png?width=1920&format=png&auto=webp&s=897671c794ade1f8ffda3b68a51f0adaa2b882fe");    background-position: center; /* Center the background image */
+    background-size: cover; /* Cover the entire element */
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+ 
+h1 {
+    margin-top: 3%;
+    font-size: 50px;
+    color: #ffffff;
+}
+ 
+h2 {
+    color: #ffffff;
+}
+ 
+hr {
+    display: block;
+    position: relative;
+    height: 100px;
+    margin: 3rem 0 5rem -50vw;
+    left: 50%;
+    border: none;
+    border-bottom: 2px dashed rgba(rgb(62, 211, 62), .25);
+    float: left;
+   
+}
+form {
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+}
+ 
+input[type="file"], select, input[type="text"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+ 
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: #d1829c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px; /* Add margin to create space below the text inputs */
+}
+ 
+button:hover {
+    background-color: #6d3c54;
+}
+ 
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ 
+.image-box {
+    margin: 0 20px;
+}
+ 
+.image-preview {
+    width: 300px;
+    height: auto;
+    border: 2px solid #5e4545;
+    border-radius: 10px;
+}
+ 
+ 
+#edit-form {
+    display: flex;
+    flex-direction: column; /* Manter o botão embaixo */
+    align-items: center; /* Centralizar o formulário */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 20px; /* Espaçamento ao redor do formulário */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    max-width: 500px; /* Largura máxima */
+    margin: 0 auto; /* Centralizar o formulário horizontalmente */
+}
+ 
+.label-container {
+    display: flex; /* Flexbox para os elementos */
+    justify-content: space-between; /* Espaçamento entre os itens */
+    width: 100%; /* Largura total */
+    margin-top: 15px; /* Espaçamento acima */
+}
+ 
+label {
+    color: #ffffff; /* Texto branco para o label */
+    text-align: left;
+    font-size: 18px; /* Tamanho da fonte para o label */
+    margin-right: 10px; /* Espaço entre o label e o input */
+    flex: 0 0 40%; /* Largura fixa para os labels */
+}
+ 
+select, input[type="text"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff; /* Texto branco para os inputs */
+    font-size: 18px; /* Tamanho da fonte para os inputs */
+    padding: 10px; /* Espaçamento dentro dos inputs */
+    margin-top: 5px; /* Espaço acima dos inputs */
+    border-radius: 5px; /* Cantos arredondados */
+    border: 1px solid #ccc; /* Borda clara */
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    flex: 0 0 55%; /* Largura fixa para os inputs */
+}
+ 
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px 20px; /* Espaçamento do botão */
+    font-size: 20px; /* Tamanho da fonte para o botão */
+    background-color: #d1829c; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de pointer ao passar o mouse */
+    margin-top: 20px; /* Espaço acima do botão */
+    transition: background-color 0.3s; /* Transição suave para o efeito de hover */
+}
+ 
+button:hover {
+    background-color: #6d3c54; /* Cor de fundo mais escura no hover */
+}

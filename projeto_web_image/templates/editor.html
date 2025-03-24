@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Imagens</title>
+    <link rel="stylesheet" href="static/css/editor.css">
+</head>
+<body>
+    <h1>Editor de Imagens</h1>
+   
+    <div class="image-container">
+        <div class="image-box">
+            <h2>Imagem Original</h2>
+            <img src="{{ url_for('static', filename='uploads/' + image_url) }}" id="image-original" class="image-preview" alt="Imagem original">
+        </div>
+        <div class="image-box">
+            <h2>Imagem Editada</h2>
+            <img id="image-edited" class="image-preview" style="display: none;" alt="Imagem editada">
+        </div>
+    </div>
+ 
+    <form id="edit-form">
+        <input type="hidden" name="image_path" id="image-path" value="{{ image_url }}">
+        <label for="operation">Escolha uma operação:</label>
+        <select name="operation" id="operation">
+            <option value="resize">Redimensionar</option>
+            <option value="rotate">Rotacionar</option>
+            <option value="brightness">Brilho</option>
+            <option value="contrast">Contraste</option>
+            <option value="text">Adicionar Texto</option>
+        </select>
+ 
+        <label for="args">Argumentos:</label>
+        <input type="text" name="args" id="args" placeholder="Ex: 200 200 ou 1.5" required>
+       
+        <button type="submit">Aplicar Edição</button>
+    </form>
+ 
+    <script>
+        document.getElementById("edit-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previne o envio tradicional do formulário
+ 
+            var formData = new FormData(this);
+           
+            // Divide a entrada de args em valores separados
+            var argsInput = document.getElementById("args").value.trim().split(' ');
+            argsInput.forEach(arg => formData.append('args[]', arg)); // Adiciona os args como um array
+ 
+            fetch('/edit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.image) {
+                    var editedImage = document.getElementById("image-edited");
+                    editedImage.src = "{{ url_for('static', filename='uploads/') }}" + data.image; // Caminho correto para a imagem editada
+                    editedImage.style.display = "block";  // Mostra a imagem editada
+ 
+                    // Atualiza o input oculto para usar a nova imagem editada para edições futuras
+                    document.getElementById("image-path").value = data.image;
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+</body>
+</html>
