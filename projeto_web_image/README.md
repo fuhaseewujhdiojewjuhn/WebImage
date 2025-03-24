@@ -33,7 +33,7 @@ Este é um editor de imagens web desenvolvido com Python, Flask, HTML, CSS e Jav
 ## Como Executar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-repositorio/editor-imagens-web.git
+   git clone https://github.com/fuhaseewujhdiojewjuhn/WebImage.git
    cd editor-imagens-web
    ```
 2. Instale as dependências:
